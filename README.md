@@ -33,12 +33,13 @@ My technical background extends beyond standard software development. I approach
 * **[C-Flex-Bison-HTML-Parser](https://github.com/PabloSoage/C-Flex-Bison-HTML-Parser):** A custom HTML DOM parser built from scratch. Uses Flex/Bison for lexical/syntactic analysis in C, compiled into a shared library, and bound to Python via FFI (`ctypes`). Valgrind-verified with zero memory leaks.
 * **[Denso-ECU-Toolkit](https://github.com/PabloSoage/Denso-ECU-Toolkit):** A modular toolchain for extracting, mapping, and visualizing calibration parameters from Denso ECUs. Uses custom Ghidra (Jython) scripts for heuristic memory scanning.
 * **[NeuroSync-Framework](https://github.com/PabloSoage/NeuroSync-Framework):** A synchronized pipeline for real-time EEG neurophysiological signal processing. Implements multiprocessing for isolated CPU-intensive tasks (FastICA) alongside a multi-interface architecture (GUI, CLI, FastAPI).
+* **[Rustify](https://github.com/PabloSoage/Rustify):** A high-performance Android music player combining a native **Rust core** with a Kotlin/Jetpack Compose frontend. Utilizes custom JNI bindings for dynamic GraphQL scraping, heuristic track matching, and zero-latency loopback HTTP stream proxying to Media3 ExoPlayer.
 * **[ASP-Constraint-Solvers](https://github.com/PabloSoage/ASP-Constraint-Solvers):** Declarative logical models built with Answer Set Programming (`clingo` / `telingo`) to solve NP-Hard multi-agent spatio-temporal planning and graph topology problems.
 * **[Fabric2D](https://github.com/PabloSoage/Fabric2D):** A procedural 2D engine built without commercial frameworks. Features multithreaded Jump Point Search (JPS) pathfinding, graph-based procedural generation, and native C/C++ FMOD audio library integration (in collaboration with [roiniti](https://github.com/roiniti) and [Mateo-RR](https://github.com/Mateo-RR)).
 
 ## Tech Stack & Tooling
 
-* **Languages:** `C`, `Python`, `Julia`, `OCaml`, `SQL`, `Java`, `Bash/PowerShell` *(Currently expanding into `C++` & `Rust`)*.
+* **Languages:** `C`, `Python`, `Julia`, `OCaml`, `SQL`, `Java`, `Kotlin`, `Bash/PowerShell` *(Currently expanding into `C++` & [`Rust`](https://github.com/PabloSoage/Rustify))*.
 * **Infrastructure:** Docker, Nginx, Wireguard, Prometheus, MinIO, Windows Server 2025, Ubuntu Server.
 * **Engineering Tools:** Ghidra (Reverse Engineering), WinOLS/GDS2 (Automotive), Clingo/Telingo (Formal Logic), Flex/Bison.
 * **Core Concepts:** Concurrency (Multiprocessing, Mutex/Locks), C-FFI, Bare-metal deployment, Asynchronous I/O.
