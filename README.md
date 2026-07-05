@@ -4,7 +4,7 @@
 
 I am a Computer Engineering graduate focused on low-level architecture, systems programming, and high-performance computing. I enjoy bridging the gap between hardware and software, from reverse-engineering automotive ECUs and compiling C parsers, to managing bare-metal hyper-compute clusters and rebuilding internal combustion engines.
 
-Currently shifting my focus towards **Embedded Systems, Electronic Warfare, Defense Tech**, and systems programming (`C/C++`, `Rust`).
+Currently working as a **Core Software Developer at Ágata Technology (Emetel Group)**, building smart multisystem integration platforms. Alongside my professional work, I am expanding my focus towards **Embedded Systems, Electronic Warfare, Defense Tech**, and high-performance systems programming (`C/C++`, `Rust`).
 
 ## Hardware, Infrastructure & Code
 
