@@ -24,7 +24,7 @@ My technical background extends beyond standard software development. I approach
 > * **Data & Infrastructure:** Databases, Computer Networks, and Information Retrieval.
 > * **Research & Development:** My Bachelor's Thesis (*Framework for Data Capture and Synchronization for Brain-Computer Interfaces*).
 > 
-> I have been endorsed by **6 University Professors and PhDs** for the **Vulcanus in Japan** international program. These recommendations, along with my official  transcript, highlight my technical rigor, ability to solve low-level architectural puzzles, and dedication to high-complexity projects.
+> I have been endorsed by **6 University Professors and PhDs**, five of them specifically for the **Vulcanus in Japan** international program. These recommendations, along with my official  transcript, highlight my technical rigor, ability to solve low-level architectural puzzles, and dedication to high-complexity projects.
 > 
 > 🔗 **[View Transcript & Recommendation Letters Here](https://udcgal-my.sharepoint.com/:f:/g/personal/p_soage_udc_es/IgDH3t-POAOITKRpsRSBUN9sAab7tpj4zQSfcMLHWMF9zMA?e=Iqe4yF)**
 
