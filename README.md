@@ -2,6 +2,31 @@
 
 **Computer Engineer | Systems Architecture | Bare-Metal Problem Solver**
 
+<p align="left">
+  <img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white" alt="C">
+  <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++">
+  <img src="https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white" alt="Rust">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white" alt="Kotlin">
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java">
+  <img src="https://img.shields.io/badge/Verilog-1A1A1A?style=flat-square" alt="Verilog">
+  <img src="https://img.shields.io/badge/OCaml-EC6813?style=flat-square&logo=ocaml&logoColor=white" alt="OCaml">
+  <img src="https://img.shields.io/badge/Julia-9558B2?style=flat-square&logo=julia&logoColor=white" alt="Julia">
+</p>
+<p align="left">
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes">
+  <img src="https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white" alt="Kafka">
+  <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot">
+  <img src="https://img.shields.io/badge/AMD%20Xilinx-ED1C24?style=flat-square&logo=amd&logoColor=white" alt="AMD Xilinx">
+  <img src="https://img.shields.io/badge/Ghidra-FF6B00?style=flat-square&logo=ghidra&logoColor=white" alt="Ghidra">
+  <img src="https://img.shields.io/badge/KiCad-314CB0?style=flat-square&logo=kicad&logoColor=white" alt="KiCad">
+  <img src="https://img.shields.io/badge/NVIDIA%20CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="CUDA">
+</p>
+
+📂 **[Portfolio →](https://pablosoage.github.io)**
+
 I am a Computer Engineering graduate focused on low-level architecture, systems programming, and high-performance computing. I enjoy bridging the gap between hardware and software, from reverse-engineering automotive ECUs and compiling C parsers, to managing bare-metal hyper-compute clusters and rebuilding internal combustion engines.
 
 Currently working as a **Core Software Developer at Ágata Technology (Emetel Group)**, building smart multisystem integration platforms. Alongside my professional work, I am expanding my focus towards **Embedded Systems, Electronic Warfare, Defense Tech**, and high-performance systems programming (`C/C++`, `Rust`).
@@ -12,7 +37,7 @@ My technical background extends beyond standard software development. I approach
 
 * **Systems Architecture & AI Infrastructure:** Designing and maintaining self-hosted homelab environments. I manage a custom bare-metal Gigabyte T181-G20 server (Dual Xeon Platinum, **4x Nvidia Tesla V100 SXM2 via NVLink**) deploying local LLMs (Open-WebUI, vLLM...) and a Docker swarm (Gitea, Minio...). Alongside it, an **AMD Kria KV260 (K26 SOM, Zynq UltraScale+ ZU5EV)** as the FPGA/SDR bench. Both are driven from the terminal by tools I wrote for the purpose — [redfishctl](https://github.com/PabloSoage/redfishctl), a Rust TUI that controls and monitors the server's BMC over Redfish (sensors, charts, power, event log) without `ipmitool` or the BMC web interface.
   * *Hardware Hacks:* Built a remote PSU trigger bridging `PS_ON` to `GND` using a Raspberry Pi GPIO and a MOSFET via Home Assistant. Modified the MegaRAC SP-X BMC JSON configurations to optimize fan curves for idle/load acoustics without thermal throttling.
-* **Low-Level OS Troubleshooting:** Experienced in disaster recovery techniques. Examples include using `sethc.exe` backdoor exploitation for `NT AUTHORITY\SYSTEM` privilege escalation to rebuild a corrupted `WinSxS` directory, and writing a Windows Server 2025 script to hot-swap V100 drivers between TCC and WDDM modes without rebooting via direct registry modifications.
+* **Low-Level OS Troubleshooting:** Experienced in disaster recovery techniques. Examples include using `sethc.exe` backdoor exploitation for `NT AUTHORITY\SYSTEM` privilege escalation to rebuild a corrupted `WinSxS` directory, and forcing Tesla V100s into **WDDM mode on Windows Server 2025**, which NVIDIA does not expose for these cards at all — `nvidia-smi` offers only TCC — by writing the display driver keys directly in the registry, and hot-swapping back without a reboot. That unlocked the GPUs for WSL2 and for graphical workloads (Blender, games) while compute tooling such as LM Studio still detects them under TCC.
 * **Automotive Mechanics & ECU Engineering:** Practical knowledge of engine mechanics (rebuilding engines, timing belt replacements, and resurrecting seized motors). Working knowledge of ECU calibration parameters (WinOLS, GDS2, SOI advanced timing, torque capping for gearbox protection) and of the diagnostic layer beneath them — reverse-engineering an adapter's undocumented protocol down to its CRC, and reading a factory tool's own 89 MB vehicle database by decompiling the loader that reads it. This led to my [Denso-ECU-Toolkit](https://github.com/PabloSoage/Denso-ECU-Toolkit) and [opendash](https://github.com/PabloSoage/opendash).
 * **Hardware & Fabrication:** Hands-on experience with 3D printing (Resin/FDM), micro-soldering, PCB assembly, and drone piloting.
 
@@ -30,22 +55,36 @@ My technical background extends beyond standard software development. I approach
 
 ## Featured Engineering Projects
 
-* **[scanner64](https://github.com/PabloSoage/scanner64):** A 64-channel real-time DDC bank in Verilog for the AMD Kria KV260's programmable logic — one sample per cycle, fixed latency, dropped samples impossible by construction. Benchmarked bit-exact against the same golden vectors in C, CUDA and Python across four platforms: **6 400 M channel-samples/s at 0.535 W**, which is 11× a Tesla V100 and 40× a dual Xeon *per watt*, while losing to both on raw throughput. Verified in hardware on the KV260, with RTL, model and C implementations all answering to the same referee.
+* **[scanner64](https://github.com/PabloSoage/scanner64):** A 64-channel real-time DDC bank in Verilog for the AMD Kria KV260's programmable logic: one sample per cycle, fixed latency, dropped samples impossible by construction. Verified in hardware and benchmarked bit-exact against C, CUDA and Xeon builds — **11x a Tesla V100 and 40x a dual Xeon per watt**.
 * **[C-Flex-Bison-HTML-Parser](https://github.com/PabloSoage/C-Flex-Bison-HTML-Parser):** A custom HTML DOM parser built from scratch. Uses Flex/Bison for lexical/syntactic analysis in C, compiled into a shared library, and bound to Python via FFI (`ctypes`). Valgrind-verified with zero memory leaks.
 * **[Denso-ECU-Toolkit](https://github.com/PabloSoage/Denso-ECU-Toolkit):** A modular toolchain for extracting, mapping, and visualizing calibration parameters from Denso ECUs. Uses custom Ghidra (Jython) scripts for heuristic memory scanning.
 * **[NeuroSync-Framework](https://github.com/PabloSoage/NeuroSync-Framework):** A synchronized pipeline for real-time EEG neurophysiological signal processing. Implements multiprocessing for isolated CPU-intensive tasks (FastICA) alongside a multi-interface architecture (GUI, CLI, FastAPI).
 * **[Rustify](https://github.com/PabloSoage/Rustify):** A high-performance Android music player combining a native **Rust core** with a Kotlin/Jetpack Compose frontend. Utilizes custom JNI bindings for dynamic GraphQL scraping, heuristic track matching, and zero-latency loopback HTTP stream proxying to Media3 ExoPlayer.
-* **[opendash](https://github.com/PabloSoage/opendash):** An Android diagnostic application for the Scanmatik SM3, built on a proprietary Wi-Fi protocol reverse-engineered from packet captures and then **confirmed against a live vehicle**. Identifying the frame signature as a CRC (reflected polynomial `0x9960034C`) turned replaying captures into *constructing* arbitrary messages — enough to install real CAN filters and drive GMLAN's own packet streaming at ~100 frames/s, against the 4–5 readings/s that polling allows. Kotlin/Jetpack Compose, with the protocol formalised separately as a tested `Rust` crate, and an ELM327 bridge so any existing OBD app can talk to an adapter it has never heard of.
+* **[opendash](https://github.com/PabloSoage/opendash):** An Android diagnostic app for the Scanmatik SM3, built on an undocumented Wi-Fi protocol recovered from packet captures and **confirmed against a live vehicle**. Identifying the frame signature as a CRC turned replaying captures into constructing messages — real CAN filters, live data at ~100 frames/s, and an ELM327 bridge so any existing OBD app can drive the device.
 * **[OCaml-Lambda-Interpreter](https://github.com/PabloSoage/OCaml-Lambda-Interpreter):** An interpreter for a statically typed extended lambda calculus. `ocamllex`/`ocamlyacc` front end feeding a type checker with type aliases and **structural subtyping** over records and functions; recursion via a fixed-point combinator (`letrec`), algebraic structures (lists, tuples, records, tagged variants with `case-of`), and a REPL holding a persistent global context.
 * **[ASP-Constraint-Solvers](https://github.com/PabloSoage/ASP-Constraint-Solvers):** Declarative logical models built with Answer Set Programming (`clingo` / `telingo`) to solve NP-Hard multi-agent spatio-temporal planning and graph topology problems.
 * **[Fabric2D](https://github.com/PabloSoage/Fabric2D):** A procedural 2D engine built without commercial frameworks. Features multithreaded Jump Point Search (JPS) pathfinding, graph-based procedural generation, and native C/C++ FMOD audio library integration (in collaboration with [roiniti](https://github.com/roiniti) and [Mateo-RR](https://github.com/Mateo-RR)).
 
 ## Tech Stack & Tooling
 
-* **Languages:** `C`, [`Rust`](https://github.com/PabloSoage/Rustify),  [`Python`](https://github.com/PabloSoage/NeuroSync-Framework), `Julia`, `Java`, [`OCaml`](https://github.com/PabloSoage/OCaml-Lambda-Interpreter), `SQL`, `Kotlin`, `Clingo\Telingo`, `Bash/PowerShell` *(Currently expanding into `C++` & [`Verilog/SystemVerilog`](https://github.com/PabloSoage/scanner64))*.
-* **Infrastructure:** Docker, Nginx, Wireguard, Prometheus, MinIO, Windows Server 2025, Ubuntu Server.
-* **Engineering Tools:** Ghidra (Reverse Engineering), Vivado/Vitis (FPGA), KiCad (PCB), WinOLS/GDS2 (Automotive), Clingo/Telingo (Formal Logic), Flex/Bison.
-* **Core Concepts:** Concurrency (Multiprocessing, Mutex/Locks), C-FFI, Bare-metal deployment, Asynchronous I/O.
+* **Languages:** `C`, [`Rust`](https://github.com/PabloSoage/Rustify), [`Python`](https://github.com/PabloSoage/NeuroSync-Framework), `Julia`, `Java`, [`OCaml`](https://github.com/PabloSoage/OCaml-Lambda-Interpreter), `SQL`, `Kotlin`, `Clingo/Telingo`, `Bash/PowerShell` *(currently expanding into `C++` & [`Verilog/SystemVerilog`](https://github.com/PabloSoage/scanner64))*.
+* **Systems & Low-Level:** Concurrency (threads, mutex/locks, multiprocessing), C-FFI and JNI, asynchronous and socket I/O, fixed-point DSP, binary formats and wire protocols, bare-metal deployment.
+* **Reverse Engineering:** Ghidra, Wireshark and packet capture, CFR/JADX decompilation, CAN/ISO-TP and J2534 diagnostics, WinOLS/GDS2.
+* **Hardware & FPGA:** Vivado/Vitis, XSim, KiCad, AMD Kria KV260 (Zynq UltraScale+), oscilloscope and logic analyser, micro-soldering.
+* **Infrastructure:** Docker & Colima, Kubernetes, Nginx, Wireguard, Prometheus, MinIO, Redfish/BMC, Windows Server 2025, Ubuntu Server.
+* **Backend & Data (professional):** Java + Spring Boot, Keycloak (OIDC), Kafka, MongoDB, Neo4j, OpenSearch, Valkey/Redis, Flowable (BPM), Maven, Testcontainers, React/Vite BFF — the day-to-day stack of a large integration platform at Ágata.
+* **Ways of Working:** Git, GitHub Actions and CI gating, Jira/Confluence, agentic development with Claude Code (custom MCP servers, codebase-memory tooling).
+
+## 📊 By the numbers
+
+<p align="left">
+  <img height="150" src="https://github-readme-stats.vercel.app/api?username=PabloSoage&show_icons=true&include_all_commits=true&hide_border=true&theme=github_dark&hide_title=true" alt="GitHub stats">
+  <img height="150" src="https://github-readme-stats.vercel.app/api/top-langs/?username=PabloSoage&layout=compact&langs_count=8&hide_border=true&theme=github_dark&hide=tex,html,jupyter%20notebook,plsql,smt,typespec,shell,powershell,makefile,cmake,dockerfile&exclude_repo=PLFM_RADAR" alt="Top languages">
+</p>
+
+> Counted in bytes of source over public repositories, which is what the GitHub API exposes and
+> not the same thing as where the work went: a Flex/Bison parser is 60 KB and a dataset is 200 MB.
+> The C, Verilog and reverse-engineering work lives in small repositories and private ones.
 
 ## 🌲 Beyond Engineering
 
