@@ -10,7 +10,7 @@ Currently working as a **Core Software Developer at Ágata Technology (Emetel Gr
 
 My technical background extends beyond standard software development. I approach engineering as a continuous puzzle across multiple disciplines:
 
-* **Systems Architecture & AI Infrastructure:** Designing and maintaining self-hosted homelab environments. I manage a custom bare-metal Gigabyte T181-G20 server (Dual Xeon Platinum, **4x Nvidia Tesla V100 SXM2 via NVLink**) deploying local LLMs (Open-WebUI, vLLM...) and a Docker swarm (Gitea, Minio...).
+* **Systems Architecture & AI Infrastructure:** Designing and maintaining self-hosted homelab environments. I manage a custom bare-metal Gigabyte T181-G20 server (Dual Xeon Platinum, **4x Nvidia Tesla V100 SXM2 via NVLink**) deploying local LLMs (Open-WebUI, vLLM...) and a Docker swarm (Gitea, Minio...). Alongside it, an **AMD Kria KV260 (K26 SOM, Zynq UltraScale+ ZU5EV)** as the FPGA/SDR bench. Both are driven from the terminal by tools I wrote for the purpose — [redfishctl](https://github.com/PabloSoage/redfishctl), a Rust TUI that controls and monitors the server's BMC over Redfish (sensors, charts, power, event log) without `ipmitool` or the BMC web interface.
   * *Hardware Hacks:* Built a remote PSU trigger bridging `PS_ON` to `GND` using a Raspberry Pi GPIO and a MOSFET via Home Assistant. Modified the MegaRAC SP-X BMC JSON configurations to optimize fan curves for idle/load acoustics without thermal throttling.
 * **Low-Level OS Troubleshooting:** Experienced in disaster recovery techniques. Examples include using `sethc.exe` backdoor exploitation for `NT AUTHORITY\SYSTEM` privilege escalation to rebuild a corrupted `WinSxS` directory, and writing a Windows Server 2025 script to hot-swap V100 drivers between TCC and WDDM modes without rebooting via direct registry modifications.
 * **Automotive Mechanics & ECU Engineering:** Practical knowledge of engine mechanics (rebuilding engines, timing belt replacements, and resurrecting seized motors). Working knowledge of ECU calibration parameters (WinOLS, GDS2, SOI advanced timing, torque capping for gearbox protection) and of the diagnostic layer beneath them — reverse-engineering an adapter's undocumented protocol down to its CRC, and reading a factory tool's own 89 MB vehicle database by decompiling the loader that reads it. This led to my [Denso-ECU-Toolkit](https://github.com/PabloSoage/Denso-ECU-Toolkit) and [opendash](https://github.com/PabloSoage/opendash).
@@ -30,6 +30,7 @@ My technical background extends beyond standard software development. I approach
 
 ## Featured Engineering Projects
 
+* **[scanner64](https://github.com/PabloSoage/scanner64):** A 64-channel real-time DDC bank in Verilog for the AMD Kria KV260's programmable logic — one sample per cycle, fixed latency, dropped samples impossible by construction. Benchmarked bit-exact against the same golden vectors in C, CUDA and Python across four platforms: **6 400 M channel-samples/s at 0.535 W**, which is 11× a Tesla V100 and 40× a dual Xeon *per watt*, while losing to both on raw throughput. Verified in hardware on the KV260, with RTL, model and C implementations all answering to the same referee.
 * **[C-Flex-Bison-HTML-Parser](https://github.com/PabloSoage/C-Flex-Bison-HTML-Parser):** A custom HTML DOM parser built from scratch. Uses Flex/Bison for lexical/syntactic analysis in C, compiled into a shared library, and bound to Python via FFI (`ctypes`). Valgrind-verified with zero memory leaks.
 * **[Denso-ECU-Toolkit](https://github.com/PabloSoage/Denso-ECU-Toolkit):** A modular toolchain for extracting, mapping, and visualizing calibration parameters from Denso ECUs. Uses custom Ghidra (Jython) scripts for heuristic memory scanning.
 * **[NeuroSync-Framework](https://github.com/PabloSoage/NeuroSync-Framework):** A synchronized pipeline for real-time EEG neurophysiological signal processing. Implements multiprocessing for isolated CPU-intensive tasks (FastICA) alongside a multi-interface architecture (GUI, CLI, FastAPI).
@@ -41,9 +42,9 @@ My technical background extends beyond standard software development. I approach
 
 ## Tech Stack & Tooling
 
-* **Languages:** `C`, `Python`, `Julia`, `OCaml`, `SQL`, `Java`, `Kotlin`, `Bash/PowerShell` *(Currently expanding into `C++` & [`Rust`](https://github.com/PabloSoage/Rustify))*.
+* **Languages:** `C`, [`Rust`](https://github.com/PabloSoage/Rustify),  [`Python`](https://github.com/PabloSoage/NeuroSync-Framework), `Julia`, `Java`, [`OCaml`](https://github.com/PabloSoage/OCaml-Lambda-Interpreter), `SQL`, `Kotlin`, `Clingo\Telingo`, `Bash/PowerShell` *(Currently expanding into `C++` & [`Verilog/SystemVerilog`](https://github.com/PabloSoage/scanner64))*.
 * **Infrastructure:** Docker, Nginx, Wireguard, Prometheus, MinIO, Windows Server 2025, Ubuntu Server.
-* **Engineering Tools:** Ghidra (Reverse Engineering), WinOLS/GDS2 (Automotive), Clingo/Telingo (Formal Logic), Flex/Bison.
+* **Engineering Tools:** Ghidra (Reverse Engineering), Vivado/Vitis (FPGA), KiCad (PCB), WinOLS/GDS2 (Automotive), Clingo/Telingo (Formal Logic), Flex/Bison.
 * **Core Concepts:** Concurrency (Multiprocessing, Mutex/Locks), C-FFI, Bare-metal deployment, Asynchronous I/O.
 
 ## 🌲 Beyond Engineering
