@@ -25,8 +25,6 @@
   <img src="https://img.shields.io/badge/NVIDIA%20CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="CUDA">
 </p>
 
-📂 **[Portfolio →](https://pablosoage.github.io)**
-
 I am a Computer Engineering graduate focused on low-level architecture, systems programming, and high-performance computing. I enjoy bridging the gap between hardware and software, from reverse-engineering automotive ECUs and compiling C parsers, to managing bare-metal hyper-compute clusters and rebuilding internal combustion engines.
 
 Currently working as a **Core Software Developer at Ágata Technology (Emetel Group)**, building smart multisystem integration platforms. Alongside my professional work, I am expanding my focus towards **Embedded Systems, Electronic Warfare, Defense Tech**, and high-performance systems programming (`C/C++`, `Rust`).
@@ -63,7 +61,12 @@ My technical background extends beyond standard software development. I approach
 * **[opendash](https://github.com/PabloSoage/opendash):** An Android diagnostic app for the Scanmatik SM3, built on an undocumented Wi-Fi protocol recovered from packet captures and **confirmed against a live vehicle**. Identifying the frame signature as a CRC turned replaying captures into constructing messages — real CAN filters, live data at ~100 frames/s, and an ELM327 bridge so any existing OBD app can drive the device.
 * **[OCaml-Lambda-Interpreter](https://github.com/PabloSoage/OCaml-Lambda-Interpreter):** An interpreter for a statically typed extended lambda calculus. `ocamllex`/`ocamlyacc` front end feeding a type checker with type aliases and **structural subtyping** over records and functions; recursion via a fixed-point combinator (`letrec`), algebraic structures (lists, tuples, records, tagged variants with `case-of`), and a REPL holding a persistent global context.
 * **[ASP-Constraint-Solvers](https://github.com/PabloSoage/ASP-Constraint-Solvers):** Declarative logical models built with Answer Set Programming (`clingo` / `telingo`) to solve NP-Hard multi-agent spatio-temporal planning and graph topology problems.
-* **[Fabric2D](https://github.com/PabloSoage/Fabric2D):** A procedural 2D engine built without commercial frameworks. Features multithreaded Jump Point Search (JPS) pathfinding, graph-based procedural generation, and native C/C++ FMOD audio library integration (in collaboration with [roiniti](https://github.com/roiniti) and [Mateo-RR](https://github.com/Mateo-RR)).
+* **[Fabric2D](https://github.com/PabloSoage/Fabric2D):** A procedural 2D engine built on `pygame` with no commercial framework underneath. Features multithreaded Jump Point Search (JPS) pathfinding, graph-based procedural generation, and the native FMOD audio engine driven through its Python bindings (in collaboration with [roiniti](https://github.com/roiniti) and [Mateo-RR](https://github.com/Mateo-RR)).
+
+## Upstream Contributions
+
+* **[codebase-memory-mcp#1764](https://github.com/DeusData/codebase-memory-mcp/issues/1764):** Diagnosed a regression where every idle MCP client burned around 0.7 of a CPU core from `0.9.1-rc.1` onward, multiplying by the number of concurrent sessions. Bisected against `0.9.0` as a control and reproduced by spawning the binary from a shell without sending a single JSON-RPC message. Fixed upstream in PR #1845; the maintainer's words on closing were that "the diagnosis in this thread did the hard part".
+* **[nvidia-pstated#10](https://github.com/sasha0552/nvidia-pstated/pull/10):** A clock-based fallback for datacentre GPUs that expose only one performance state (P100, V100). Where setting a P-state fails, it reads each GPU's lowest supported core and memory clocks and idles there instead. +519/−18 across 4 files; open.
 
 ## Tech Stack & Tooling
 
@@ -72,19 +75,7 @@ My technical background extends beyond standard software development. I approach
 * **Reverse Engineering:** Ghidra, Wireshark and packet capture, CFR/JADX decompilation, CAN/ISO-TP and J2534 diagnostics, WinOLS/GDS2.
 * **Hardware & FPGA:** Vivado/Vitis, XSim, KiCad, AMD Kria KV260 (Zynq UltraScale+), oscilloscope and logic analyser, micro-soldering.
 * **Infrastructure:** Docker & Colima, Kubernetes, Nginx, Wireguard, Prometheus, MinIO, Redfish/BMC, Windows Server 2025, Ubuntu Server.
-* **Backend & Data (professional):** Java + Spring Boot, Keycloak (OIDC), Kafka, MongoDB, Neo4j, OpenSearch, Valkey/Redis, Flowable (BPM), Maven, Testcontainers, React/Vite BFF — the day-to-day stack of a large integration platform at Ágata.
-* **Ways of Working:** Git, GitHub Actions and CI gating, Jira/Confluence, agentic development with Claude Code (custom MCP servers, codebase-memory tooling).
-
-## 📊 By the numbers
-
-<p align="left">
-  <img height="150" src="https://github-readme-stats.vercel.app/api?username=PabloSoage&show_icons=true&include_all_commits=true&hide_border=true&theme=github_dark&hide_title=true" alt="GitHub stats">
-  <img height="150" src="https://github-readme-stats.vercel.app/api/top-langs/?username=PabloSoage&layout=compact&langs_count=8&hide_border=true&theme=github_dark&hide=tex,html,jupyter%20notebook,plsql,smt,typespec,shell,powershell,makefile,cmake,dockerfile&exclude_repo=PLFM_RADAR" alt="Top languages">
-</p>
-
-> Counted in bytes of source over public repositories, which is what the GitHub API exposes and
-> not the same thing as where the work went: a Flex/Bison parser is 60 KB and a dataset is 200 MB.
-> The C, Verilog and reverse-engineering work lives in small repositories and private ones.
+* **How I Work:** Git and GitHub Actions with CI gates; empirical debugging — measure first, change one thing at a time; and writing down what is *not* verified as carefully as what is.
 
 ## 🌲 Beyond Engineering
 
