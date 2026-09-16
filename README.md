@@ -63,18 +63,13 @@ My technical background extends beyond standard software development. I approach
 * **[ASP-Constraint-Solvers](https://github.com/PabloSoage/ASP-Constraint-Solvers):** Declarative logical models built with Answer Set Programming (`clingo` / `telingo`) to solve NP-Hard multi-agent spatio-temporal planning and graph topology problems.
 * **[Fabric2D](https://github.com/PabloSoage/Fabric2D):** A procedural 2D engine built on `pygame` with no commercial framework underneath. Features multithreaded Jump Point Search (JPS) pathfinding, graph-based procedural generation, and the native FMOD audio engine driven through its Python bindings (in collaboration with [roiniti](https://github.com/roiniti) and [Mateo-RR](https://github.com/Mateo-RR)).
 
-## Upstream Contributions
-
-* **[codebase-memory-mcp#1764](https://github.com/DeusData/codebase-memory-mcp/issues/1764):** Diagnosed a regression where every idle MCP client burned around 0.7 of a CPU core from `0.9.1-rc.1` onward, multiplying by the number of concurrent sessions. Bisected against `0.9.0` as a control and reproduced by spawning the binary from a shell without sending a single JSON-RPC message. Fixed upstream in PR #1845; the maintainer's words on closing were that "the diagnosis in this thread did the hard part".
-* **[nvidia-pstated#10](https://github.com/sasha0552/nvidia-pstated/pull/10):** A clock-based fallback for datacentre GPUs that expose only one performance state (P100, V100). Where setting a P-state fails, it reads each GPU's lowest supported core and memory clocks and idles there instead. +519/−18 across 4 files; open.
-
 ## Tech Stack & Tooling
 
 * **Languages:** `C`, [`Rust`](https://github.com/PabloSoage/Rustify), [`Python`](https://github.com/PabloSoage/NeuroSync-Framework), `Julia`, `Java`, [`OCaml`](https://github.com/PabloSoage/OCaml-Lambda-Interpreter), `SQL`, `Kotlin`, `Clingo/Telingo`, `Bash/PowerShell` *(currently expanding into `C++` & [`Verilog/SystemVerilog`](https://github.com/PabloSoage/scanner64))*.
 * **Systems & Low-Level:** Concurrency (threads, mutex/locks, multiprocessing), C-FFI and JNI, asynchronous and socket I/O, fixed-point DSP, binary formats and wire protocols, bare-metal deployment.
 * **Reverse Engineering:** Ghidra, Wireshark and packet capture, CFR/JADX decompilation, CAN/ISO-TP and J2534 diagnostics, WinOLS/GDS2.
-* **Hardware & FPGA:** Vivado/Vitis, XSim, KiCad, AMD Kria KV260 (Zynq UltraScale+), oscilloscope and logic analyser, micro-soldering.
-* **Infrastructure:** Docker & Colima, Kubernetes, Nginx, Wireguard, Prometheus, MinIO, Redfish/BMC, Windows Server 2025, Ubuntu Server.
+* **Hardware & FPGA:** Vivado/Vitis, XSim, KiCad, AMD Kria KV260 (Zynq UltraScale+), micro-soldering.
+* **Infrastructure & Services:** Docker & Colima, Kubernetes, Kafka, MongoDB, Neo4j, OpenSearch, Valkey/Redis, Testcontainers, Nginx, Wireguard, Prometheus, MinIO, Redfish/BMC, Windows Server 2025, Ubuntu Server.
 * **How I Work:** Git and GitHub Actions with CI gates; empirical debugging — measure first, change one thing at a time; and writing down what is *not* verified as carefully as what is.
 
 ## 🌲 Beyond Engineering
