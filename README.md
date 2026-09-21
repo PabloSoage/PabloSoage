@@ -70,7 +70,7 @@ My technical background extends beyond standard software development. I approach
 * **Reverse Engineering:** Ghidra, Wireshark and packet capture, CFR/JADX decompilation, CAN/ISO-TP and J2534 diagnostics, WinOLS/GDS2.
 * **Hardware & FPGA:** Vivado/Vitis, XSim, KiCad, AMD Kria KV260 (Zynq UltraScale+), micro-soldering.
 * **Infrastructure & Services:** Docker & Colima, Kubernetes, Kafka, MongoDB, Neo4j, OpenSearch, Valkey/Redis, Testcontainers, Nginx, Wireguard, Prometheus, MinIO, Redfish/BMC, Windows Server 2025, Ubuntu Server.
-* **How I Work:** Git and GitHub Actions with CI gates; empirical debugging — measure first, change one thing at a time; and writing down what is *not* verified as carefully as what is.
+* **How I Work:** Git and GitHub Actions with CI gates; empirical debugging — measure first, change one thing at a time; the measurements behind a claim published with it, and writing down what is *not* verified as carefully as what is.
 
 ## 🌲 Beyond Engineering
 
