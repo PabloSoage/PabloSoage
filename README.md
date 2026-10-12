@@ -53,6 +53,7 @@ My technical background extends beyond standard software development. I approach
 
 ## Featured Engineering Projects
 
+* **[sh705x-emu](https://github.com/PabloSoage/sh705x-emu):** An emulator for Denso engine ECUs on the Renesas SH-2E, written from scratch in Rust, that runs a car's own firmware unmodified against modelled peripherals and a simulated engine — the flash **idles at 750 rpm on the torque it asks for, as the car does**, faster than real time. Traces every calibration-map lookup live, decoded from its own descriptor and checked against the firmware's own result, with an egui desktop GUI and a Kotlin/Compose Android app over the same core.
 * **[scanner64](https://github.com/PabloSoage/scanner64):** A 64-channel real-time DDC bank in Verilog for the AMD Kria KV260's programmable logic: one sample per cycle, fixed latency, dropped samples impossible by construction. Verified in hardware and benchmarked bit-exact against C, CUDA and Xeon builds — **11x a Tesla V100 and 40x a dual Xeon per watt**.
 * **[C-Flex-Bison-HTML-Parser](https://github.com/PabloSoage/C-Flex-Bison-HTML-Parser):** A custom HTML DOM parser built from scratch. Uses Flex/Bison for lexical/syntactic analysis in C, compiled into a shared library, and bound to Python via FFI (`ctypes`). Valgrind-verified with zero memory leaks.
 * **[Denso-ECU-Toolkit](https://github.com/PabloSoage/Denso-ECU-Toolkit):** A modular toolchain for extracting, mapping, and visualizing calibration parameters from Denso ECUs. Uses custom Ghidra (Jython) scripts for heuristic memory scanning.
