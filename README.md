@@ -2,29 +2,6 @@
 
 **Computer Engineer | Systems Architecture | Bare-Metal Problem Solver**
 
-<p align="left">
-  <img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white" alt="C">
-  <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++">
-  <img src="https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white" alt="Rust">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white" alt="Kotlin">
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java">
-  <img src="https://img.shields.io/badge/Verilog-1A1A1A?style=flat-square" alt="Verilog">
-  <img src="https://img.shields.io/badge/OCaml-EC6813?style=flat-square&logo=ocaml&logoColor=white" alt="OCaml">
-  <img src="https://img.shields.io/badge/Julia-9558B2?style=flat-square&logo=julia&logoColor=white" alt="Julia">
-</p>
-<p align="left">
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux">
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
-  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes">
-  <img src="https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white" alt="Kafka">
-  <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot">
-  <img src="https://img.shields.io/badge/AMD%20Xilinx-ED1C24?style=flat-square&logo=amd&logoColor=white" alt="AMD Xilinx">
-  <img src="https://img.shields.io/badge/Ghidra-FF6B00?style=flat-square&logo=ghidra&logoColor=white" alt="Ghidra">
-  <img src="https://img.shields.io/badge/KiCad-314CB0?style=flat-square&logo=kicad&logoColor=white" alt="KiCad">
-  <img src="https://img.shields.io/badge/NVIDIA%20CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="CUDA">
-</p>
-
 I am a Computer Engineering graduate and a current student of the **Master's in High Performance Computing at the Universidade da Coruña (UDC)**, focused on low-level architecture, systems programming, and high-performance computing. I enjoy bridging the gap between hardware and software, from reverse-engineering automotive ECUs and compiling C parsers, to managing bare-metal hyper-compute clusters and rebuilding internal combustion engines.
 
 Currently working as a **Core Software Developer at Ágata Technology (Emetel Group)**, building smart multisystem integration platforms. Alongside my professional work, I am expanding my focus towards **Embedded Systems, Electronic Warfare, Defense Tech**, and high-performance systems programming (`C/C++`, `Rust`).
@@ -55,13 +32,13 @@ My technical background extends beyond standard software development. I approach
 
 ## Featured Engineering Projects
 
-* **[sh705x-emu](https://github.com/PabloSoage/sh705x-emu):** An emulator for Denso engine ECUs on the Renesas SH-2E, written from scratch in Rust, that runs a car's own firmware unmodified against modelled peripherals and a simulated engine — the flash **idles at 750 rpm on the torque it asks for, as the car does**, faster than real time. Traces every calibration-map lookup live, decoded from its own descriptor and checked against the firmware's own result, with an egui desktop GUI and a Kotlin/Compose Android app over the same core.
-* **[tensor-mirror](https://github.com/PabloSoage/tensor-mirror):** Bit-exact replicas of NVIDIA tensor-core arithmetic in RTL: one parametrised unit that returns the same bits as a chosen GPU, from Volta to RTX Blackwell, MXFP4/NVFP4 block scaling included, and GEMM arrays of it on the AMD Kria KV260. Checked with my own `mma.sync` kernels on a V100, an A100, two RTX 2060s and an RTX 5070 Ti, which turned up behaviour the published models had wrong, since adopted by Microsoft's MMA-Sim. On the board, **0 mismatches with the GPUs in 7.6 million results**.
+* **[sh705x-emu](https://github.com/PabloSoage/sh705x-emu):** An emulator for Denso engine ECUs on the Renesas SH-2E, written from scratch in Rust, that runs a car's own firmware unmodified against modelled peripherals and a simulated engine faster than real time. Traces every calibration-map lookup live, decoded from its own descriptor and checked against the firmware's own result.
+* **[tensor-mirror](https://github.com/PabloSoage/tensor-mirror):** Bit-exact replicas of NVIDIA tensor-core arithmetic in RTL: one parametrised unit that returns the same bits as a chosen GPU, from Volta to RTX Blackwell, MXFP4/NVFP4 block scaling included, and GEMM arrays of it on the AMD Kria KV260.
 * **[kv260-ias2rf](https://github.com/PabloSoage/kv260-ias2rf):** An RF front-end carrier board for the AMD Kria KV260, designed in KiCad: multiband SDR (HF to 3 GHz) and the IF of the AERIS-10 10.5 GHz FMCW radar with ADAR1000 beamforming, plus Ethernet, vehicle CAN and GPS. [Explore it in 3-D](https://pablosoage.github.io/kv260-ias2rf/).
-* **[glidedesk](https://github.com/PabloSoage/glidedesk):** A GPU-accelerated remote desktop for Linux, in Rust: each user gets a headless GNOME Wayland session composited on the GPU, with no monitor or dummy plug, and the desktop resizes with the client window. Hardware encoding (NVENC, VA-API), served at once over standard RDP so `mstsc` works with nothing installed, over its own low-latency protocol (**video over UDP with Reed-Solomon FEC, so a lost packet never stalls the picture**), and over WebRTC to any browser.
+* **[glidedesk](https://github.com/PabloSoage/glidedesk):** A GPU-accelerated remote desktop for Linux, in Rust. Hardware encoding (NVENC, VA-API), served at once over standard RDP, over its own low-latency protocol, and over WebRTC to any browser.
 * **[NeuroSync-Framework](https://github.com/PabloSoage/NeuroSync-Framework):** A synchronized pipeline for real-time EEG neurophysiological signal processing. Implements multiprocessing for isolated CPU-intensive tasks (FastICA) alongside a multi-interface architecture (GUI, CLI, FastAPI).
-* **[Rustify](https://github.com/PabloSoage/Rustify):** A music player for Android, Windows, Linux, macOS, iOS and the web: one native **Rust core** under one Compose Multiplatform interface. The core is reached over JNI or a C ABI and brings its own audio engine and DSP effects where there is no ExoPlayer, while `rustify-server` puts it behind an HTTP API and serves the whole app to any browser as WebAssembly. Also has Jam sessions over MQTT and Google Drive sync that merges across devices instead of overwriting.
-* **[opendash](https://github.com/PabloSoage/opendash):** An Android diagnostic app for the Scanmatik SM3, built on an undocumented Wi-Fi protocol recovered from packet captures and **confirmed against a live vehicle**. Identifying the frame signature as a CRC turned replaying captures into constructing messages — real CAN filters, live data at ~100 frames/s, and an ELM327 bridge so any existing OBD app can drive the device.
+* **[Rustify](https://github.com/PabloSoage/Rustify):** A music player for Android, Windows, Linux, macOS, iOS and the web: one native **Rust core** under one Compose Multiplatform interface.
+* **[opendash](https://github.com/PabloSoage/opendash):** An Android diagnostic app for the Scanmatik SM3, built on an undocumented Wi-Fi protocol recovered from packet captures and **confirmed against a live vehicle**. Real CAN filters, live data, and an ELM327 bridge so any existing OBD app can drive the device.
 
 ## Tech Stack & Tooling
 
@@ -83,3 +60,26 @@ I tend to approach most challenges as logical puzzles, but I also know when to c
 > *"If a system has logic, it can be understood. If it can be understood, it can be optimized."* — **Personal Engineering Motto**<br>
 > *"逃げたら一つ、進めば二つ" (If you run, you gain one; if you move forward, you gain two.)* — **Mobile Suit Gundam: The Witch from Mercury**<br>
 > *"ちりも積もれば山となる" (Even dust, when piled up, becomes a mountain.)* — **Japanese Proverb**
+
+<p align="left">
+  <img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white" alt="C">
+  <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white" alt="C++">
+  <img src="https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white" alt="Rust">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white" alt="Kotlin">
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java">
+  <img src="https://img.shields.io/badge/Verilog-1A1A1A?style=flat-square" alt="Verilog">
+  <img src="https://img.shields.io/badge/OCaml-EC6813?style=flat-square&logo=ocaml&logoColor=white" alt="OCaml">
+  <img src="https://img.shields.io/badge/Julia-9558B2?style=flat-square&logo=julia&logoColor=white" alt="Julia">
+</p>
+<p align="left">
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux">
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes">
+  <img src="https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white" alt="Kafka">
+  <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" alt="Spring Boot">
+  <img src="https://img.shields.io/badge/AMD%20Xilinx-ED1C24?style=flat-square&logo=amd&logoColor=white" alt="AMD Xilinx">
+  <img src="https://img.shields.io/badge/Ghidra-FF6B00?style=flat-square&logo=ghidra&logoColor=white" alt="Ghidra">
+  <img src="https://img.shields.io/badge/KiCad-314CB0?style=flat-square&logo=kicad&logoColor=white" alt="KiCad">
+  <img src="https://img.shields.io/badge/NVIDIA%20CUDA-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="CUDA">
+</p>
